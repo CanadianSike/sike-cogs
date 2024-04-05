@@ -1,4 +1,4 @@
-from .pincog import pincog
+from .pincog import PinCog
 import asyncio
 
 

@@ -1,4 +1,4 @@
-from redbot.core import commands, checks, Config, app_commands
+from redbot.core import commands, checks, Config, commands
 import discord
 
 class PinCog(commands.Cog):
