@@ -1,9 +1,0 @@
-{
-    "author" : ["CanadainSike"],
-    "install_msg" : "[p]help",
-    "name" : "PinCog",
-    "disabled" : false,
-    "short" : "Pins messages using commands",
-    "description" : "Pins messages based on messageID via bot commands",
-    "tags": ["pins", "utility"]
-}
