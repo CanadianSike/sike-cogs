@@ -1,4 +1,4 @@
-from .messagepinner import pincog
+from .pincog import pincog
 import asyncio
 
 
