@@ -1,4 +1,5 @@
 from redbot.core import commands, checks, Config, commands
+from redbot.core.i18n import Translator, cog_i18n
 import discord
 
 
@@ -14,6 +15,6 @@ class PinCog(commands.Cog):
     @commands.guild_only()
     @commands.command()
     async def pinmsg(ctx, msg_id: int):
-        message = await textchannel.fetch_message(msg_id)
+        message = await ctx.fetch_message(msg_id)
         await message.pin(msg_id)
         
