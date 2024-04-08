@@ -1,6 +1,5 @@
 from redbot.core import commands, checks, Config, commands
-import discord
-
+from discord.ext import commands
 class PinCog(commands.Cog):
     """Custom Pinning Cog"""
 
@@ -13,6 +12,6 @@ class PinCog(commands.Cog):
     @commands.guild_only()
     @commands.command()
     async def pinmsg(ctx, msg_id: int):
-        message = await ctx.fetch(msg_id)
+        message = await ctx.fetch_message(msg_id)
         await message.pin(msg_id)
         
