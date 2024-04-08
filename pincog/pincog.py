@@ -13,5 +13,6 @@ class PinCog(commands.Cog):
     @commands.guild_only()
     @commands.command()
     async def pinmsg(ctx, msg_id: int):
-        msg = await ctx.fetch_message(msg_id)
-        await ctx.msg.pin()
+        message = await ctx.fetch_message(msg_id)
+        await message.pin()
+        
