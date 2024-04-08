@@ -1,21 +1,10 @@
+import asyncio
 import discord
-from redbot.core import Config, checks, commands
-from redbot.core.i18n import Translator, cog_i18n
+from redbot.core import Config, commands, checks
+from redbot.core.bot import Red
 
-
-
-
-@cog_i18n(_)
 class PinCog(commands.Cog):
     """Custom Pinning Cog"""
-
-    default_channel = {}
-    default_guild = {}
-
-    def __init__(self):
-        self.settings = Config.get_conf(self, identifier=59595922, force_registration=True)
-        self.settings.register_channel(**self.default_channel)
-        self.settings.register_guild(**self.default_guild)
 
     @commands.command()
     async def sike(self, ctx):
