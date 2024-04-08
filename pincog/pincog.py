@@ -1,6 +1,6 @@
 from redbot.core import commands, checks, Config, commands
 import discord
-from discord.ext import commands
+
 
 class PinCog(commands.Cog):
     """Custom Pinning Cog"""
