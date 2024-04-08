@@ -3,6 +3,6 @@ import asyncio
 
 
 async def setup(bot):
-    obj = bot.add_cog(pincog())
+    obj = bot.add_cog(PinCog())
     if asyncio.iscoroutine(obj):
         await obj
