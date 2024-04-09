@@ -1,5 +1,6 @@
 import asyncio
 import discord
+from discord.ext import commands
 from redbot.core import Config, commands, checks
 from redbot.core.bot import Red
 
@@ -16,7 +17,7 @@ class PinCog(commands.Cog):
     @commands.guild_only()
     @commands.command()
     async def pinmsg(self, ctx, channel_id, message_id):
-        channel = self.bot.get_channel(channel_id)
+        channel = ctx.get_channel(channel_id)
         message = await channel.fetch_message(message_id)
         message = await channel.get_partial_message(message_id)
         await message.pin(message_id)
