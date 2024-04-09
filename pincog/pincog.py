@@ -5,8 +5,7 @@ from redbot.core.bot import Red
 
 class PinCog(commands.Cog):
     """Custom Pinning Cog"""
-    def __init__(self, bot):
-        self.bot = bot
+    
 
     @commands.command()
     async def sike(self, ctx):
@@ -16,9 +15,9 @@ class PinCog(commands.Cog):
     @checks.mod_or_permissions(manage_messages=True)
     @commands.guild_only()
     @commands.command()
-    async def pinmsg(ctx, chnl_id: int, msg_id: int):
-        channel = ctx.bot.get_channel(chnl_id)
-        message = await channel.fetch_message(msg_id)
-        message = await channel.get_partial_message(msg_id)
-        await message.pin(msg_id)
+    async def pinmsg(self, bot, channel_id, message_id):
+        channel = bot.get_channel(channel_id)
+        message = await channel.fetch_message(message_id)
+        message = await channel.get_partial_message(message_id)
+        await message.pin(message_id)
         
