@@ -4,6 +4,8 @@ from redbot.core import Config, commands, checks
 from redbot.core.bot import Red
 
 class PinCog(commands.Cog):
+    def __init__(self, bot: Bot) -> None:
+        self.bot = bot
     """Custom Pinning Cog"""
 
     @commands.command()
