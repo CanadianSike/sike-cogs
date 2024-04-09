@@ -24,5 +24,5 @@ class PinCog(commands.Cog):
         channel =  self.bot.get_channel(channel_id)
         message = await channel.fetch_message(message_id)
         message = channel.get_partial_message(message_id)
-        await message.pin(message_id)
+        await message.pin()
         
