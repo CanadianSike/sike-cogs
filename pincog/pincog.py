@@ -4,9 +4,13 @@ from discord.ext import commands
 from redbot.core import Config, commands, checks
 from redbot.core.bot import Red
 
+from redbot.core import commands
+
 class PinCog(commands.Cog):
     """Custom Pinning Cog"""
-    
+
+    def __init__(self, bot):
+        self.bot = bot  
 
     @commands.command()
     async def sike(self, ctx):
