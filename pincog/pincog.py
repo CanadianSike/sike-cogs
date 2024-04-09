@@ -16,12 +16,18 @@ class PinCog(commands.Cog):
     async def sike(self, ctx):
         await ctx.send("SikeCogs Has been loaded. Good luck!")
 
+    @commands.commands()
+    async def roleset(self, ctx, ,bot, roleid: int):
+        await ctx.send("Please submit role IDs for pinmsg permissions.")
+        roleid = self.bot.guild.get_role(roleid[0])
+        await ctx.send(content=roleid)
 
-    @checks.mod_or_permissions(manage_messages=True)
+        #@discord.app_commands.checks.has_role(role_id: int)
+        #def check_roles(role_id):
+        #@checks.mod_or_permissions(manage_messages=True)
     @commands.guild_only()
     @commands.command()
     async def pinmsg(self, bot, channel_id: int, message_id: int):
         channel =  self.bot.get_channel(channel_id)
         message = channel.get_partial_message(message_id)
-        await message.pin()
-        
+        await message.pin() 
