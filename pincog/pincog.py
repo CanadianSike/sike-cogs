@@ -15,8 +15,8 @@ class PinCog(commands.Cog):
     @checks.mod_or_permissions(manage_messages=True)
     @commands.guild_only()
     @commands.command()
-    async def pinmsg(self, bot, channel_id, message_id):
-        channel = bot.get_channel(channel_id)
+    async def pinmsg(self, ctx, channel_id, message_id):
+        channel = self.bot.get_channel(channel_id)
         message = await channel.fetch_message(message_id)
         message = await channel.get_partial_message(message_id)
         await message.pin(message_id)
