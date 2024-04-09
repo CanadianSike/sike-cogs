@@ -1,8 +1,10 @@
+
+from redbot.core.bot import Red
 from .pincog import PinCog
 import asyncio
 
 
 async def setup(bot):
-    obj = bot.add_cog(PinCog())
-    if asyncio.iscoroutine(obj):
-        await obj
+    cog = PinCog(bot)
+    await bot.add_cog(cog)
+     # await cog.initialize()
