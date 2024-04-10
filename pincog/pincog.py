@@ -18,7 +18,7 @@ class PinCog(commands.Cog):
 
     @commands.command()
     async def roleset(self, ctx, bot, roleid: int):
-        await ctx.send("Please submit role IDs for pinmsg permissions.")
+        """Please submit role IDs for pinmsg permissions."""
         roleid = self.bot.guild.get_role(roleid[0])
         await ctx.send(content=roleid)
 
