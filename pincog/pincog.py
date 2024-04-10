@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 from redbot.core import Config, commands, checks
 from redbot.core.bot import Red
+from discord.utils import get
 
 from redbot.core import commands
 
@@ -17,10 +18,10 @@ class PinCog(commands.Cog):
         await ctx.send("SikeCogs Has been loaded. Good luck!")
 
     @commands.command()
-    async def roleset(self, bot, roleid: int):
+    async def roleset(self, ctx, roleid: int):
         """Please submit role IDs for pinmsg permissions."""
-        roleid = self.bot.guild.get_role(roleid[0])
-        await self.bot.send(content=roleid)
+        roleid = get(ctx.guild.roles(roleid[0]))
+        await ctx.send(content=roleid)
 
         #@discord.app_commands.checks.has_role(role_id: int)
         #def check_roles(role_id):
