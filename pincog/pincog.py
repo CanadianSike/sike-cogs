@@ -17,7 +17,7 @@ class PinCog(commands.Cog):
         await ctx.send("SikeCogs Has been loaded. Good luck!")
 
     @commands.command()
-    async def roleset(self, ctx, bot, roleid: int):
+    async def roleset(self, bot, ctx, roleid: int):
         """Please submit role IDs for pinmsg permissions."""
         roleid = self.bot.guild.get_role(roleid[0])
         await ctx.send(content=roleid)
