@@ -21,7 +21,7 @@ class PinCog(commands.Cog):
     async def roleset(self, bot, roleid: int):
         """Please submit role IDs for pinmsg permissions."""
         roles = [roleid]
-        await self.bot.message.send(roles)
+        await send(roles)
 
         #@discord.app_commands.checks.has_role(role_id: int)
         #def check_roles(role_id):
