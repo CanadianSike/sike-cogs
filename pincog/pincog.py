@@ -10,7 +10,7 @@ from redbot.core import commands
 class PinCog(commands.Cog):
     """Custom Pinning Cog"""
 
-    #roles = {int}
+    roles = {int}
 
     def __init__(self, bot):
         self.bot = bot
