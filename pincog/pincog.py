@@ -10,12 +10,12 @@ from redbot.core import commands
 class PinCog(commands.Cog):
     """Custom Pinning Cog"""
 
-    roles = {int}
+    #roles = {int}
 
     def __init__(self, bot):
         self.bot = bot
         self.config
-
+        
     @commands.command()
     async def sike(self, ctx):
         await ctx.send("SikeCogs Has been loaded. Good luck!")
