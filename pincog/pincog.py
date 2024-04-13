@@ -11,7 +11,8 @@ class PinCog(commands.Cog):
     """Custom Pinning Cog"""
 
     def __init__(self, bot):
-        self.bot = bot  
+        self.bot = bot
+        self.config
 
     @commands.command()
     async def sike(self, ctx):
@@ -23,15 +24,12 @@ class PinCog(commands.Cog):
         roles = [roleid]
         await ctx.send(roles)
 
-        #@discord.app_commands.checks.has_role(role_id: int)
-        #def check_roles(role_id):
-        #@checks.mod_or_permissions(manage_messages=True)
+    @discord.app_commands.checks.has_role(roles)
     @commands.guild_only()
     @commands.command()
-    async def pinmsg(self, ctx, channel_id: int, message_id: int):
-        channel =  self.bot.get_channel(channel_id)
-        message = channel.get_partial_message(message_id)
-        await message.pin() 
-        await ctx.send("Message has been pinned!")
+    async def pinmsg(self, ctx, channel_id: int, message_id: int): 
+            channel =  self.bot.get_channel(channel_id)
+            message = channel.get_partial_message(message_id)
+            await message.pin() 
+            await ctx.send("Message has been pinned!")
 
-        #ctx is context arg
