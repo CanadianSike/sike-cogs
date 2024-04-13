@@ -25,12 +25,11 @@ class PinCog(commands.Cog):
         roles = [roleid]
         await ctx.send(roles)
 
-    @discord.app_commands.checks.has_role(roles)
     @commands.guild_only()
     @commands.command()
-    async def pinmsg(self, ctx, channel_id: int, message_id: int): 
+    @commands.has_role(roles)
+    async def pinmsg(self, ctx, channel_id: int, message_id: int):
             channel =  self.bot.get_channel(channel_id)
             message = channel.get_partial_message(message_id)
             await message.pin() 
             await ctx.send("Message has been pinned!")
-
