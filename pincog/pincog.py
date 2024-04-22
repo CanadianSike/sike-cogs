@@ -24,6 +24,7 @@ class PinCog(commands.Cog):
         """Please submit role IDs for pinmsg permissions."""
         if roleid == None:
              await ctx.send("Submit ID please.")
+             return
         else:
             roles = [roleid]
             await ctx.send(roles)
