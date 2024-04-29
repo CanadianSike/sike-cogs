@@ -13,8 +13,6 @@ class PinCog(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        bot.roles
-    
 
     @commands.command()
     async def sike(self, ctx):
