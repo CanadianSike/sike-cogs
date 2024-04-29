@@ -24,10 +24,13 @@ class PinCog(commands.Cog):
         """Please submit role IDs for pinmsg permissions."""
         if roleid == None:
              await ctx.send("Submit ID please.")
-             return
+
+        elif roleid == int: 
+             await ctx.send(roleid)
+
         else:
-            roles = [roleid]
-            await ctx.send(roles)
+               await ctx.send("Am fucked")
+              # await ctx.send(roleid)
 
     @commands.guild_only()
     @commands.command()
