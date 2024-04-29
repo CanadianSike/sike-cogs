@@ -9,12 +9,12 @@ from redbot.core import commands
 class PinCog(commands.Cog):
     """Custom Pinning Cog"""
 
-    saved_set_roles = {None}
 
     def __init__(self, bot):
         self.bot = bot
         self.config = Config.get_conf(self, identifier=195470, force_registration=True)
-        self.config.register_global(saved_set_roles=[int])
+        self.config.register_global(roles=[int])
+
    
     @commands.command()
     async def sike(self, ctx):
