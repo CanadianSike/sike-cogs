@@ -21,7 +21,7 @@ class PinCog(commands.Cog):
     @commands.command()
     async def roleset(self, ctx, roles):
         """Please submit role IDs for pinmsg permissions."""
-        if roles == None:
+        if roles == int:
              await ctx.send("Roles have been set")
              await ctx.send(roles)
         else:
@@ -31,7 +31,7 @@ class PinCog(commands.Cog):
 
     @commands.guild_only()
     @commands.command()
-    @commands.has_role(roles)
+    #@commands.has_role(roles)
     async def pinmsg(self, ctx, channel_id: int, message_id: int):
             channel =  self.bot.get_channel(channel_id)
             message = channel.get_partial_message(message_id)
