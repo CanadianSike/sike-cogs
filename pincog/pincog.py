@@ -12,7 +12,7 @@ class PinCog(commands.Cog):
         self.config = Config.get_conf(self, identifier=195470, force_registration=True)
         default_global = {
              
-             "roles" : None
+             #"roles" : None
 
         }
 
@@ -21,7 +21,7 @@ class PinCog(commands.Cog):
 
         } 
 
-        self.config.register_global(roles=[int])
+        self.config.register_global(roles=[])
         self.config.register_global(**default_global)
         self.config.register_guild(**default_guild)
 
