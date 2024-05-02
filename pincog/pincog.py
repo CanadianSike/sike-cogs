@@ -10,14 +10,19 @@ class PinCog(commands.Cog):
     def __init__(self):
         #self.bot = bot
         self.config = Config.get_conf(self, identifier=195470, force_registration=True)
-        self.config.register_global(roles=[int])
+        default_global = {
+             
+             roles : None,
+
+        }
+        #self.config.register_global(roles=[int])
 
    
     @commands.command()
     async def sike(self, ctx):
         await ctx.send("SikeCogs Has been loaded. Good luck!")
-
-    @commands.command()
+        await ctx.send (await self.config.roles)
+    @commands.command()     
     async def roleset(self, ctx, roles: int):
         """Please submit role IDs for pinmsg permissions."""
         if roles == int:
