@@ -12,7 +12,7 @@ class PinCog(commands.Cog):
         self.config = Config.get_conf(self, identifier=195470, force_registration=True)
         default_global = {
              
-             #"roles" : None
+            "roles"
 
         }
 
@@ -27,7 +27,7 @@ class PinCog(commands.Cog):
 
    
     @commands.command()
-    async def sike(self, ctx):
+    async def sike(self, roles, ctx):
         await ctx.send("SikeCogs Has been loaded. Good luck!")
         await ctx.send (await self.config.roles)
     @commands.command()     
